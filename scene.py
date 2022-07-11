@@ -50,7 +50,7 @@ def compute_reproj_delta_3d(detection, projMat_block_diag, M, njts):
   formatted_joints2D[:2,:] = detection['pose2d'].reshape(2,njts)
   formatted_joints2D = formatted_joints2D.T.ravel()
 
-  x,resid,rank,s = np.linalg.lstsq(A, formatted_joints2D)
+  x,resid,rank,s = np.linalg.lstsq(A, formatted_joints2D, rcond=-1)
   x /= x[3]
 
   return x[0:3]

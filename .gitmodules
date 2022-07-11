@@ -1,0 +1,4 @@
+[submodule "Detectron.pytorch"]
+	path = Detectron.pytorch
+	url = git@github.com:sgolodetz/Detectron.pytorch
+	branch = smg-lcrnet
